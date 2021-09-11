@@ -7,27 +7,14 @@ export const EOM = ({ employee }) => {
       <div className={styles.main}>
         <h1>Employee Of The Month </h1>
         <div className={styles.employeeOfTheMonth}>
-          <h3>{employee.name}</h3>
+          <h3>Darsh Jain</h3>
 
-          <h6>{employee.position}</h6>
-          <img src={employee.image} />
-          <p>{employee.description}</p>
+          <h6>Software Engineer</h6>
+          <img src='https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-dsc/avatars/darsh_jain.jpeg' />
+          <p>Blockchain Developer</p>
         </div>
       </div>
     </div>
   )
 }
-
-export const getServerSideProps = async (pageContext) => {
-  const apiResponse = await fetch(
-    'https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth',
-  )
-  const employee = await apiResponse.json()
-  return {
-    props: {
-      employee,
-    },
-  }
-}
-
 export default EOM
